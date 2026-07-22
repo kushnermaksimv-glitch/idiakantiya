@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Республика Идиакантия — Официальный портал</title>
+    <style>
+        :root {
+            --bg-color: #12131C;
+            --card-bg: #1A1C29;
+            --accent-orange: #E67E22;
+            --accent-blue: #2980B9;
+            --text-main: #F5F5F5;
+            --text-muted: #A0A5B5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 3em;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #DDD;
+        }
+
+        nav {
+            background-color: #0c0d14;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2em;
+            border-bottom: 3px solid var(--accent-orange);
+            display: inline-block;
+            margin-bottom: 25px;
+            padding-bottom: 5px;
+        }
+
+        /* Карточка лидера */
+        .leader-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .leader-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .leader-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .leader-info h3 {
+            font-size: 1.8em;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        /* Галерея жителей */
+        .citizens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .citizen-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .citizen-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.2);
+        }
+
+        .citizen-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            background: #252836;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .citizen-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Нац. Символика и Валюта */
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .symbol-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .symbol-card h3 {
+            margin-bottom: 10px;
+            color: var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0c0d14;
+            color: var(--text-muted);
+            margin-top: 40px;
+        }
+
+        /* Подсказка для замены картинок */
+        .img-placeholder {
+            color: #888;
+            font-size: 0.8rem;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Республика Идиакантия</h1>
+        <p>«Обеспечено мощью ВВС и стабильным интернетом»</p>
+    </header>
+
+    <nav>
+        <a href="#leader">Лидер</a>
+        <a href="#citizens">Жители</a>
+        <a href="#currency">Валюта и Символы</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Секция Идиаканта (Верховного Лидера) -->
+        <section id="leader">
+            <h2>Верховный Идиакант</h2>
+            <div class="leader-card">
+                <div class="leader-img">
+                    <!-- Замените '1000067004.png' или '1000068250.png' на вашу картинку с котом в очках -->
+                    <img src="1000067004.png" alt="Идиакант Кот в Очках" onerror="this.style.display='none'; this.parentNode.innerText='🕶️🐱'">
+                </div>
+                <div class="leader-info">
+                    <h3>Первый Кот (Идиакант)</h3>
+                    <p>Основатель государства, лидер «Единой Партии Идиаканта» и главный гарант порядка. Всегда ходит в солнцезащитных очках и следит за процветанием государства.</p>
+                    <br>
+                    <p><strong>Статус:</strong> Бессменный глава Идиакантии</p>
+                    <p><strong>Официальный девиз:</strong> Развитие, ВВС и Сверхскоростной интернет!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Жителей -->
+        <section id="citizens">
+            <h2>Жители Идиакантии</h2>
+            <div class="citizens-grid">
+                
+                <div class="citizen-card">
+                    <div class="citizen-avatar">
+                        <!-- Вставьте картинку кота-военного или жителя -->
+                        <img src="1000068259.jpg" alt="Житель" onerror="this.style.display='none'; this.parentNode.innerText='🐱'">
+                    </div>
+                    <h3>Страж Матроскин</h3>
+                    <p>Служащий министерства обороны и охраны морских границ.</p>
+                </div>
+
+                <div class="citizen-card">
+                    <div class="citizen-avatar">
+                        <!-- Вставьте картинку аватара Roblox -->
+                        <img src="1000068258.jpg" alt="Житель" onerror="this.style.display='none'; this.parentNode.innerText='🕶️'">
+                    </div>
+                    <h3>Агент Квадрат</h3>
+                    <p>Почетный гражданин из района Блок-Сити.</p>
+                </div>
+
+                <div class="citizen-card">
+                    <div class="citizen-avatar">
+                        <!-- Вставьте картинку с цветком -->
+                        <img src="1000068261.jpg" alt="Житель" onerror="this.style.display='none'; this.parentNode.innerText='🌸'">
+                    </div>
+                    <h3>Цветочный Пайп</h3>
+                    <p>Представитель ботанического сектора Идиакантии.</p>
+                </div>
+
+                <div class="citizen-card">
+                    <div class="citizen-avatar">
+                        <!-- Вставьте картинку со тюленем -->
+                        <img src="1000068262.jpg" alt="Житель" onerror="this.style.display='none'; this.parentNode.innerText='🦭'">
+                    </div>
+                    <h3>Хранитель Тюлень</h3>
+                    <p>Отвечает за гармонию и милоту в столице.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Валюта и Символы -->
+        <section id="currency">
+            <h2>Национальное Достояние</h2>
+            <div class="symbol-grid">
+                <div class="symbol-card">
+                    <h3>Национальная Валюта</h3>
+                    <p><strong>Идиакант (100 Идиакантиев)</strong> — официальный билет Госбанка серии ИД №777420. Обеспечен мощью ВВС, стабильным интернетом и личной гарантией Первого Кота.</p>
+                </div>
+                <div class="symbol-card">
+                    <h3>Единая Партия</h3>
+                    <p>Партия под руководством Идиаканта продвигает технологический прогресс, авиацию и высокий уровень жизни всех жителей страны.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Республика Идиакантия. Сделано для GitHub Pages & Firebase Hosting.</p>
+    </footer>
+
+</body>
+</html>
